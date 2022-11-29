@@ -103,13 +103,16 @@ functions, like `sorted()`, take a function `key` as an argument to determine
 which values to sort by:
 
 ```py
-l = [['red','truck'],['blue','truck'],['red','car']]
+l = [['red','truck'],['blue','truck'],['red','sedan']]
 sorted(l, key=lambda v: v[1])
-# => [['red', 'car'], ['red', 'truck'], ['blue', 'truck']]
+# => [['red', 'sedan'], ['red', 'truck'], ['blue', 'truck']]
 sorted(l, key=lambda v: v[1], reverse=True)
-# => [['red', 'truck'], ['blue', 'truck'], ['red', 'car']]
+# => [['red', 'truck'], ['blue', 'truck'], ['red', 'sedan']]
 
 ```
+
+This sorts our list of lists by the values at index 1 (the type of vehicle),
+with the added option to sort in ascending or descending (`reverse=True`) order.
 
 We can also return lambdas as new, unique functions, as seen in the previous
 section:
